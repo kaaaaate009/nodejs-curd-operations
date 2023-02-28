@@ -49,7 +49,7 @@ exports.update = (req, res, next) => {
     let id = req.params.id;
 
     if (model.updateById(id, story)) {
-        res.redirect('/stories' + id);
+        res.redirect('/stories/' + id);
     } else {
         let err = new Error('Cannot find a story with id - ' + id);
         err.status = 404;
